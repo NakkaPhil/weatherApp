@@ -31,6 +31,10 @@ p{
   display: grid;
   justify-content: center;
   align-items: center;
+  /*BG Settings*/
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .Box-weather{
@@ -73,30 +77,29 @@ p{
   border-radius: 50%;
   box-shadow: 1px 1px 5px black;
   text-align: center;
+  transition: all .125s ease-in;
+}
+
+.temp_btn:hover{
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.952);
+  color: white;
 }
 
 
 
 .cloudy_bg{
   background-image: url(../src/assets/cloudy.jpg);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-
 }
 
 .rainy_bg{
   background-image: url(../src/assets/rain.jpg);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-
 }
 
 .sunny_bg{
   background-image: url(../src/assets/sunny.jpg);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+}
 
+.drizzle_bg{
+  background-image: url(../src/assets/drizzle.jpg);
 }

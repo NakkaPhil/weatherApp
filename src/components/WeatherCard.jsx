@@ -26,6 +26,9 @@ function WeatherCard() {
         case 'Rain': weatherCond = 'rainy_bg'
             break;
         case 'Clear': weatherCond = 'sunny_bg'
+            break;
+        case 'Drizzle': weatherCond = 'drizzle_bg'
+            break;
         default:  
             break;
         }
