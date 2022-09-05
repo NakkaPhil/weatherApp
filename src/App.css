@@ -1,0 +1,101 @@
+*{
+  margin: 0;
+  padding: 0;
+  font-family: 'Cinzel', serif;
+  font-family: 'Open Sans', sans-serif;
+}
+
+h1{
+  font-size: 2.8rem;
+}
+
+h2{
+  font-size: 2.4rem;
+}
+
+h3{
+  font-size: 2rem;
+}
+
+h3 span{
+  font-weight: 600;
+}
+
+.container{
+  width: 100%;
+  height: 100%;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  margin-top: 15rem;
+  padding: 2rem;
+}
+
+.Box-weather{
+  background-color: rgba(86, 107, 89, 0.404);
+  padding: 2rem;
+  border-radius: 2rem;
+  box-shadow: 1px 2px 3px rgb(29, 26, 26);
+}
+
+
+.card{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  max-width: 768px;
+  line-height: 1.6;
+}
+
+.icon{
+  width: 250px;
+}
+
+.icon-box{
+  display: flex;
+  justify-content: center;
+}
+
+.temp{
+  font-size: 5rem;
+}
+.temp_btn{
+  height: 70px;
+  width: 70px;
+  padding: 5px;
+  font-size: 2.4rem;
+  border: none;
+  background-color: transparent;
+  border-radius: 50%;
+  box-shadow: 1px 1px 5px black;
+  text-align: center;
+}
+
+
+
+.cloudy_bg{
+  background-image: url(../src/assets/cloudy.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+}
+
+.rainy_bg{
+  background-image: url(../src/assets/rain.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+}
+
+.sunny_bg{
+  background-image: url(../src/assets/sunny.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+}
