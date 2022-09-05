@@ -1,11 +1,10 @@
 import React from "react";
 import { useState } from "react";
-import useAPI from "../hooks/useAPI";
-
+import useAPI from "../hooks/useAPI"; //Personalized hook
+import {KelvinToFarenheit, KelvinToCelsius} from "../functions/functions"; //Conversion functions
 
 function WeatherCard() {
     //Weather Data:
-    const kelvinUnit = 273.15
     const iconURL = 'http://openweathermap.org/img/wn/'
     let weatherCond = ''
 
@@ -15,6 +14,9 @@ function WeatherCard() {
 
     //Hook to obtain the Weather Data:
     const {clima, location } = useAPI()
+    //Obtaining temp in Celsius and Farenheit untis
+    let tempF =  KelvinToFarenheit(clima?.main?.temp)
+    let tempC = KelvinToCelsius(clima?.main?.temp)
     
     
     //Setting background basing on the API call results:
@@ -29,10 +31,6 @@ function WeatherCard() {
         }
 
 
-       
-    let tempF =  parseInt(Math.round((( clima?.main?.temp - 273.15) * 9/5 )+ 32))
-    let tempC = parseInt(Math.round(((clima?.main?.temp) - kelvinUnit)))
-    
 
     return (
     <div className= 
@@ -46,9 +44,9 @@ function WeatherCard() {
             <h2 className="temp">{tempUnity? `${tempC} Cº`: `${tempF} Fº`}</h2>
             <button className="temp_btn" onClick={changeUnity}>{tempUnity? 'Cº': 'Fº'}</button>
             <h3>{location?.description}</h3>
-            <p><i class='bx bxl-tailwind-css'></i> <span>Wind Speed: </span> {clima?.wind?.speed} m/s</p>
-            <p><i class='bx bx-cloud'></i> Clouds: {clima?.clouds?.all}%</p>
-            <p><i class='bx bx-droplet'></i> Humidity: {clima?.main?.humidity}%</p>
+            <p><i className='bx bxl-tailwind-css'></i> <span>Wind Speed: </span> {clima?.wind?.speed} m/s</p>
+            <p><i className='bx bx-cloud'></i> Clouds: {clima?.clouds?.all}%</p>
+            <p><i className='bx bx-droplet'></i> Humidity: {clima?.main?.humidity}%</p>
         </div>
         </div>
     </div> 
