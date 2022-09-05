@@ -53,7 +53,7 @@ function WeatherCard() {
     let tempF =  parseInt(Math.round((( clima?.main?.temp - 273.15) * 9/5 )+ 32))
     let tempC = parseInt(Math.round(((clima?.main?.temp) - kelvinUnit)))
     console.log(clima)
-    
+
     return (
     <div className= 
     {`${weatherCond} container`}>
@@ -65,10 +65,10 @@ function WeatherCard() {
             <h1>{clima?.name} - {clima?.sys?.country}</h1>
             <h2 className="temp">{tempUnity? `${tempC} Cº`: `${tempF} Fº`}</h2>
             <button className="temp_btn" onClick={changeUnity}>{tempUnity? 'Cº': 'Fº'}</button>
-            <h2>{location?.description}</h2>
-            <h3><i class='bx bxl-tailwind-css'></i> <span>Wind Speed: </span> {clima?.wind?.speed} m/s</h3>
-            <h3><i class='bx bx-cloud'></i> Clouds: {clima?.clouds?.all}%</h3>
-            <h3><i class='bx bx-droplet'></i> Humidity: {clima?.main?.humidity}%</h3>
+            <h3>{location?.description}</h3>
+            <p><i class='bx bxl-tailwind-css'></i> <span>Wind Speed: </span> {clima?.wind?.speed} m/s</p>
+            <p><i class='bx bx-cloud'></i> Clouds: {clima?.clouds?.all}%</p>
+            <p><i class='bx bx-droplet'></i> Humidity: {clima?.main?.humidity}%</p>
         </div>
         </div>
     </div> 
