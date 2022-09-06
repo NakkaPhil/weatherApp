@@ -13,7 +13,7 @@ function WeatherCard() {
     const changeUnity = () => setTempUnity(!tempUnity)
 
     //Hook to obtain the Weather Data:
-    const {clima, location } = useAPI()
+    const {clima, location, loading } = useAPI()
     //Obtaining temp in Celsius and Farenheit untis
     let tempF =  KelvinToFarenheit(clima?.main?.temp)
     let tempC = KelvinToCelsius(clima?.main?.temp)
@@ -36,8 +36,13 @@ function WeatherCard() {
 
 
     return (
-    <div className= 
+    <div 
+    className= 
     {`${weatherCond} container`}>
+        {loading && <div className="loading">
+            <img src="./src/assets/loading.gif" alt="" />
+            
+        </div> }
         <div className="Box-weather">
         <div className="icon-box">
             <img className="icon" src={`${iconURL}${location?.icon}@2x.png`} />

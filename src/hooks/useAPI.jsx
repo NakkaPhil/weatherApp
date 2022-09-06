@@ -4,6 +4,7 @@ const useAPI = () => {
     
     const [clima, setClima] = useState({})
     const [location, setLocation] = useState({})
+    const [loading, setLoading] = useState(true)
     
     useEffect(()=>{
       
@@ -19,6 +20,7 @@ const useAPI = () => {
             (res) => {
             setClima(res.data),
             setLocation(res.data.weather[0])
+            setLoading(!loading)
             }
             )
         }
@@ -29,7 +31,7 @@ const useAPI = () => {
     
 
    
-    return {clima, location}
+    return {clima, location, loading}
 }
 
 export default useAPI
