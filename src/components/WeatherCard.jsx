@@ -40,7 +40,7 @@ function WeatherCard() {
     className= 
     {`${weatherCond} container`}>
         {loading && <div className="loading">
-            <img src="./src/assets/loading.gif" alt="" />
+            
             
         </div> }
         <div className="Box-weather">
