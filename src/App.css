@@ -44,7 +44,8 @@ p{
 }
 
 .container{
-  width: 100%;
+  width: 90%;
+  padding: 0 5%;
   height: 100vh;
   display: grid;
   justify-content: center;
@@ -55,14 +56,27 @@ p{
   background-size: cover;
 }
 
+@media(min-width: 768px){
+  .container{
+      justify-content: unset;
+  }
+}
+
 .Box-weather{
   background-color: rgba(86, 107, 89, 0.404);
   padding: 2rem;
   border-radius: 2rem;
   box-shadow: 1px 2px 3px rgb(29, 26, 26);
-  max-height: 80vh;
+  max-height: 90vh;
+  overflow: scroll;
 }
 
+@media(min-width: 768px){
+  .Box-weather{
+    display: flex;
+    justify-content: space-between;
+  }
+}
 
 .card{
   display: flex;
@@ -82,15 +96,26 @@ p{
   justify-content: center;
 }
 
-.temp{
-  font-size: 5rem;
+.temp, .hour{
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+.date, .location{
+  font-weight: 300;
+}
+
+@media(min-width: 768px ){
+  .temp, .hour{
+    font-size: 5rem;
+  }
 }
 .temp_btn{
   height: 70px;
   width: 70px;
   padding: 5px;
   font-size: 2.4rem;
-  border: none;
+  border: 1px solid white;
   background-color: transparent;
   border-radius: 50%;
   box-shadow: 1px 1px 5px black;
@@ -120,4 +145,11 @@ p{
 
 .drizzle_bg{
   background-image: url(../src/assets/drizzle.jpg);
+}
+
+/* Card Left Side*/
+.card-leftSide{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }

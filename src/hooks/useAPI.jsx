@@ -5,6 +5,7 @@ const useAPI = () => {
     const [clima, setClima] = useState({})
     const [location, setLocation] = useState({})
     const [loading, setLoading] = useState(true)
+    const [countryCode, setCountryCode] = useState()
     
     useEffect(()=>{
       
@@ -14,13 +15,15 @@ const useAPI = () => {
     function success(pos) {
         let coords = pos.coords
         let latitude = coords.latitude
-        let longitude = coords.longitude        
+        let longitude = coords.longitude
+                
         axios.get(`https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${APIkey}`)
         .then(
             (res) => {
             setClima(res.data),
             setLocation(res.data.weather[0])
             setLoading(!loading)
+            setCountryCode(res.data.sys.country) //Sets the country code
             }
             )
         }
@@ -29,9 +32,10 @@ const useAPI = () => {
         
     },[])
     
+    console.log(clima)
 
    
-    return {clima, location, loading}
+    return {clima, location, loading, countryCode}
 }
 
 export default useAPI
