@@ -29,7 +29,7 @@ function WeatherCard() {
     
     
     //Setting background basing on the API call results:
-    switch (location?.main) {
+    switch (location.main) {
         case 'Clouds': weatherCond = 'cloudy_bg'
             break;
         case 'Rain': weatherCond = 'rainy_bg'

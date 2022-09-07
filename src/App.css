@@ -5,6 +5,10 @@
   font-family: 'Open Sans', sans-serif;
 }
 
+::-webkit-scrollbar {
+  display: none;
+}
+
 h1{
   font-size: 2.6rem;
 }
@@ -64,7 +68,7 @@ p{
 
 .Box-weather{
   background-color: rgba(86, 107, 89, 0.404);
-  padding: 2rem;
+  padding: 1.8rem;
   border-radius: 2rem;
   box-shadow: 1px 2px 3px rgb(29, 26, 26);
   max-height: 90vh;
